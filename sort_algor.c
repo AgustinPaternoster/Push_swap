@@ -8,6 +8,11 @@ void swap(int * a, int x , int y)
 	a[y] = tmp;
 }
 
+void merge_sort(int * a, int)
+{
+    
+}
+
 void insertion_sort(int * a, int size)
 {
    int i;
