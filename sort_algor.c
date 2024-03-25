@@ -11,11 +11,11 @@ void swap(int * a, int x , int y)
 void cpy_array(int *src, int *dst,int ini ,int end)
 {
 	int i;
-
+	
 	i = 0;
 	while(i + ini < end)
 	{
-		src[i+ini] = dst[i];
+		dst[i] = src[i+ini];
 		i++;
 	}
 }
@@ -24,6 +24,7 @@ void merge_sort(int * a, int size)
    	int middle;
 	int *left_sort;
 	int *right_sort;
+	int tmp;
 
 	if  (size == 1)
 	   return;
@@ -31,7 +32,10 @@ void merge_sort(int * a, int size)
 	left_sort = malloc(sizeof(int)*middle);
 	right_sort = malloc(sizeof(int)*size - middle);
 	cpy_array(a,left_sort,0,middle);
-	cpy_array(a,right_sort,size - middle , size);
+	cpy_array(a,right_sort, middle , size);
+	for(int i = 0; i + middle < size; i++)
+        tmp = right_sort[i];
+
 
 }
 
