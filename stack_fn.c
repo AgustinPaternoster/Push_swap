@@ -1,4 +1,4 @@
-#include <push_swap.h>
+#include "push_swap.h"
 
 t_stack *create_node(int nb, int idx)
 {
@@ -11,6 +11,7 @@ t_stack *create_node(int nb, int idx)
     node->idx = idx;
     node->next = NULL;
     node->prev = NULL;
+	return(node);
 }
 
 void add_stack(t_stack **stack, t_stack *node)

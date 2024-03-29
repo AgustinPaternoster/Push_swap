@@ -8,7 +8,7 @@ int start(t_stack **stack_A, char **argv , int arg)
     i = 1;
     while (i <= arg)
     {
-        new_node = create_node(atoi(argv[i]),i);
+        new_node = create_node(ft_atoi(argv[i]),i);
         if (!new_node)
             return(0);
         add_stack(stack_A,new_node);
@@ -26,7 +26,7 @@ int main(int arg, char **argv)
     stack_B = NULL;
 
     if(!start(&stack_A,argv,arg))
-        write("Error\n",6);
+        write(1,"Error\n",6);
 
 	printstact(&stack_A);
     return (0);

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int atoi(char *str)
+int ft_atoi(char *str)
 {
     int i;
     int nb;
