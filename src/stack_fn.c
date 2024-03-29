@@ -46,7 +46,7 @@ void printstact(t_stack ** stack)
 	tmp = firstnode; 
 	do
 	{
-		printf("nb:%d , idx:%d",tmp->nb , tmp->idx);
+		printf("nb:%d , idx:%d\n",tmp->nb , tmp->idx);
 		tmp = tmp->next;;
 	}
 	while (tmp != firstnode);
