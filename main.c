@@ -3,12 +3,14 @@
 int start(t_stack **stack_A, char **argv , int arg)
 {
     int i;
+	int nb;
     t_stack *new_node;
 
     i = 1;
-    while (i <= arg)
+    while (i < arg)
     {
-        new_node = create_node(ft_atoi(argv[i]),i);
+        nb = ft_atoi(argv[i]);
+		new_node = create_node(nb,i);
         if (!new_node)
             return(0);
         add_stack(stack_A,new_node);
@@ -25,9 +27,9 @@ int main(int arg, char **argv)
     stack_A = NULL;
     stack_B = NULL;
 
-    if(!start(&stack_A,argv,arg))
-        write(1,"Error\n",6);
-
+	 if(!start(&stack_A,argv,arg))
+		 write(1,"Error\n",6);
+	
 	printstact(&stack_A);
     return (0);
 }
