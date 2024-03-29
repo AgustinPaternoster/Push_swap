@@ -35,3 +35,15 @@ void add_stack(t_stack **stack, t_stack *node)
     }
 
 }
+
+void printstact(t_stack ** stack)
+{
+	t_stack * tmp;
+
+	tmp = *stack;
+	while (tmp->next != tmp)
+	{
+		printf("nb:%d , idx:%d",tmp->nb , tmp->idx);
+		tmp = tmp->next;
+	}
+}

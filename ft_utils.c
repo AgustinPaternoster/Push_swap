@@ -16,7 +16,8 @@ int atoi(char *str)
     }
     while(str[i])
     {
-        nb *= 10 + (str[i] - 48);
+        nb *= 10;
+		nb += str[i] - 48;
         i++;
     }
     return (nb * sign);

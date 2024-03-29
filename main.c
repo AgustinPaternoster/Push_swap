@@ -28,5 +28,6 @@ int main(int arg, char **argv)
     if(!start(&stack_A,argv,arg))
         write("Error\n",6);
 
+	printstact(&stack_A);
     return (0);
 }
