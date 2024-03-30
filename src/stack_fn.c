@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_stack *create_node(int nb, int idx)
 {
@@ -46,7 +46,7 @@ void printstact(t_stack ** stack)
 	tmp = firstnode; 
 	do
 	{
-		printf("nb:%d , idx:%d\n",tmp->nb , tmp->idx);
+		ft_printf("nb:%d , idx:%d\n",tmp->nb , tmp->idx);
 		tmp = tmp->next;;
 	}
 	while (tmp != firstnode);

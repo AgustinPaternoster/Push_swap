@@ -2,10 +2,8 @@
 #define PUSH_SWAP
 #include <unistd.h>
 #include <stdlib.h>
+#include "../printf/ft_printf.h"
 
-/////////////////
-#include <stdio.h>
-//////////////////
 typedef struct l_stack 
 {
     int idx;

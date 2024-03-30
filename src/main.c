@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int start(t_stack **stack_A, char **argv , int arg)
 {
@@ -31,5 +31,6 @@ int main(int arg, char **argv)
 		 write(1,"Error\n",6);
 	
 	printstact(&stack_A);
+    ft_printf("%s","test printf");
     return (0);
 }

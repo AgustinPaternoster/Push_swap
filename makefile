@@ -1,18 +1,25 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-CFILES = ./src/main.c\
-		./src/ft_utils.c\
-		./src/push_swap.c\
-		.src/stack_fn.c\
-HEADER = push_swap.h
+CFILES = main.c\
+		ft_utils.c\
+		stack_fn.c
+SRC_DIR = src/
+SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
+HEADER = include/push_swap.h
 NAME = app
-PRINTF = libftprintf.a
+PRINTF = printf/libftprintf.a
 
 all : $(NAME)
 
-
-
-$(NAME) : $(CFILES) $(HEADER) $(LIBRARY)
+$(NAME) : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	
-	$(CC) -o $@ $< $(LIBDIR)$(LIBRARY)
+	$(CC) -o $@ $(SRC_FILES) $(HEADER) $(PRINTF)
+
+clean :
+	make clean -C printf
+
+fclean :
+	make fclean -C printf
+	rm $(NAME)
+
+re : fclean all
