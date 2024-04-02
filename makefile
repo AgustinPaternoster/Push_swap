@@ -6,14 +6,18 @@ CFILES = main.c\
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 HEADER = include/push_swap.h
-NAME = app
+NAME = a.out
 PRINTF = printf/libftprintf.a
 
 all : $(NAME)
 
 $(NAME) : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	$(CC) -o $@ $(SRC_FILES) $(HEADER) $(PRINTF)
+	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF)
+
+debug : $(SRC_FILES) $(HEADER) makefile
+	@make -C printf
+	$(CC) -g $(SRC_FILES) $(HEADER) $(PRINTF)
 
 clean :
 	make clean -C printf

@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-t_stack *create_node(int nb, int idx)
+t_stack *create_node(int nb)
 {
     t_stack *node;
 
@@ -8,33 +8,10 @@ t_stack *create_node(int nb, int idx)
     if(!node)
         return (NULL);
     node->nb = nb;
-    node->idx = idx;
+    node->idx = 0;
     node->next = NULL;
     node->prev = NULL;
 	return(node);
-}
-
-void create_stack_a(t_stack **stack, t_stack *node)
-{
-    t_stack *tmp;
-    t_stack *last_node;
-
-    tmp = *stack;
-    if(tmp == NULL)
-    {
-        *stack = node;
-        node->next = node;
-        node->prev = node;
-    }
-    else
-    {
-        last_node = tmp->prev;
-        last_node->next = node;
-        tmp->prev = node;
-        node->next = tmp;
-        node->prev = last_node;
-    }
-
 }
 
 void printstact(t_stack ** stack)
@@ -50,4 +27,29 @@ void printstact(t_stack ** stack)
 		tmp = tmp->next;;
 	}
 	while (tmp != firstnode);
+}
+
+void add_stack(t_stack ** stack,t_stack *node)
+{
+	t_stack *tmp;
+	t_stack *lastnode;
+
+	tmp  = *stack;
+	if (!tmp)
+	{
+		*stack = node;
+		node->next = node;
+		node->prev = node;
+		node->idx = 1;
+	}
+	else
+	{
+		lastnode = tmp->prev;	
+		node->idx = lastnode->idx + 1;
+		node->prev = lastnode;
+		node->next = tmp;
+		lastnode->next = node;
+		tmp->prev = node;
+
+	}
 }

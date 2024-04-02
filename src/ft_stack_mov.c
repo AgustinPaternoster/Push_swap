@@ -1,6 +1,9 @@
 #include "../include/push_swap.h"
 
-void ft_push_stack(t_stack ** stack)
+void ft_pa(t_stack ** stack_a , t_stack ** stack_b)
 {
-	return void;
+	if(!stack_a)
+		return;
+
+
 }

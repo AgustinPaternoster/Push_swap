@@ -10,10 +10,10 @@ int start(t_stack **stack_A, char **argv , int arg)
     while (i < arg)
     {
         nb = ft_atoi(argv[i]);
-		new_node = create_node(nb,i);
+		new_node = create_node(nb);
         if (!new_node)
             return(0);
-        create_stack_a(stack_A,new_node);
+        add_stack(stack_A,new_node);
         i++;
     }
     return (1);
@@ -31,6 +31,5 @@ int main(int arg, char **argv)
 		 write(1,"Error\n",6);
 	
 	printstact(&stack_A);
-    ft_printf("%s","test printf");
     return (0);
 }
