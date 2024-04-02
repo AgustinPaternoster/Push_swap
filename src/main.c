@@ -28,8 +28,9 @@ int main(int arg, char **argv)
     stack_B = NULL;
 
 	 if(!start(&stack_A,argv,arg))
-		 write(1,"Error\n",6);
-	
+		 write(1,"Error\n",6); 
 	printstact(&stack_A);
-    return (0);
+	del_first_node(&stack_A);
+	printstact(&stack_A);
+	return (0);
 }

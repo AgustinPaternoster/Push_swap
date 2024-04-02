@@ -16,4 +16,5 @@ int ft_atoi(char *str);
 t_stack *create_node(int nb);
 void printstact(t_stack ** stack);
 void add_stack(t_stack ** stack,t_stack *node);
+void del_first_node(t_stack ** stack);
 #endif
