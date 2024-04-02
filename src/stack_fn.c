@@ -14,7 +14,7 @@ t_stack *create_node(int nb, int idx)
 	return(node);
 }
 
-void add_stack(t_stack **stack, t_stack *node)
+void create_stack_a(t_stack **stack, t_stack *node)
 {
     t_stack *tmp;
     t_stack *last_node;

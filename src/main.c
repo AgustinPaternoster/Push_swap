@@ -13,7 +13,7 @@ int start(t_stack **stack_A, char **argv , int arg)
 		new_node = create_node(nb,i);
         if (!new_node)
             return(0);
-        add_stack(stack_A,new_node);
+        create_stack_a(stack_A,new_node);
         i++;
     }
     return (1);
