@@ -19,9 +19,14 @@ void printstact(t_stack ** stack)
 	t_stack * tmp;
 	t_stack *firstnode;
 	
+    if (!*stack)
+    {    
+        ft_printf("NULL\n");
+        return;
+    }
 	firstnode = *stack;
 	tmp = firstnode; 
-	do
+    do
 	{
 		ft_printf("nb:%d , idx:%d\n",tmp->nb , tmp->idx);
 		tmp = tmp->next;;
@@ -80,7 +85,7 @@ void del_first_node(t_stack ** stack)
 	tmp = *stack;
 	if(!tmp)
 		return;
-	if (tmp->next == tmp->prev)
+	if (tmp == tmp->next)
 		*stack = NULL;
 	else
 	{

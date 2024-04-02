@@ -30,7 +30,9 @@ int main(int arg, char **argv)
 	 if(!start(&stack_A,argv,arg))
 		 write(1,"Error\n",6); 
 	printstact(&stack_A);
-	del_first_node(&stack_A);
-	printstact(&stack_A);
+    printstact(&stack_B);
+    ft_pa(&stack_A,&stack_B);
+    printstact(&stack_A);
+    printstact(&stack_B);
 	return (0);
 }

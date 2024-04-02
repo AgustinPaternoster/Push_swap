@@ -17,4 +17,5 @@ t_stack *create_node(int nb);
 void printstact(t_stack ** stack);
 void add_stack(t_stack ** stack,t_stack *node);
 void del_first_node(t_stack ** stack);
+void ft_pa(t_stack ** stack_a , t_stack ** stack_b);
 #endif
