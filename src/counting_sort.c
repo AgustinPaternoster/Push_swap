@@ -1,4 +1,5 @@
-#include "push_swap.h"
+#include "../include/push_swap.h"
+
 void count_aux(int *a,int len)
 {
     int i;

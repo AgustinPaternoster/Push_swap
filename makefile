@@ -3,7 +3,9 @@ CFLAGS = -Wall -Werror -Wextra
 CFILES = main.c\
 		ft_utils.c\
 		stack_fn.c\
-		ft_stack_mov.c
+		ft_stack_mov.c\
+		stack_c_fn.c\
+		counting_sort.c
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 HEADER = include/push_swap.h

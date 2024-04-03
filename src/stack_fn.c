@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-t_stack *create_node(int nb)
+t_stack *create_node(int nb, int idx)
 {
     t_stack *node;
 
@@ -8,7 +8,7 @@ t_stack *create_node(int nb)
     if(!node)
         return (NULL);
     node->nb = nb;
-    node->idx = 0;
+    node->idx = idx;
     node->next = NULL;
     node->prev = NULL;
 	return(node);
@@ -36,7 +36,6 @@ void printstact(t_stack ** stack)
 		ft_printf("nb: %d idx: %d\n", tmp->nb, tmp->idx);
 		tmp = tmp->next;
 	}
-	
 }
 
 void add_stack(t_stack ** stack,t_stack *node)
@@ -54,6 +53,3 @@ void add_stack(t_stack ** stack,t_stack *node)
 		node->prev = lastnode;
 	}
 }
-
-
-
