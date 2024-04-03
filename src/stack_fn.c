@@ -30,7 +30,10 @@ void printstact(t_stack ** stack)
 {
 	t_stack *tmp;
 
+	
 	tmp = *stack;
+	if(!tmp)
+		ft_printf("NULL\n");
 	while (tmp != NULL)
 	{
 		ft_printf("nb: %d idx: %d\n", tmp->nb, tmp->idx);

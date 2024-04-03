@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -Wextra
 CFILES = main.c\
 		ft_utils.c\
 		stack_fn.c\
-		ft_stack_mov.c\
+		ft_push_action.c\
 		stack_c_fn.c\
 		counting_sort.c
 SRC_DIR = src/
