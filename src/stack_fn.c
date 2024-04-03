@@ -56,3 +56,18 @@ void add_stack(t_stack ** stack,t_stack *node)
 		node->prev = lastnode;
 	}
 }
+
+int len_stack(t_stack **stack)
+{
+	t_stack *tmp;
+	int i;
+
+	tmp = *stack;
+	i = 0;
+	while (tmp != NULL)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
+}
