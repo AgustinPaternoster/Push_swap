@@ -6,7 +6,8 @@ CFILES = main.c\
 		ft_push_m.c\
 		stack_c_fn.c\
 		counting_sort.c\
-		ft_swap_m.c
+		ft_swap_m.c\
+		ft_rotate_m.c
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 HEADER = include/push_swap.h
