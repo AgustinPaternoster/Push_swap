@@ -35,23 +35,17 @@ int main(int arg, char **argv)
 	 if(!start(&stack_A,argv,arg))
 		 write(1,"Error\n",6); 
     printstact(&stack_A);
-    ft_printf("---------\n");
     ft_pb(&stack_A,&stack_B);
-    ft_pb(&stack_A,&stack_B);
-    printstact(&stack_B);
+    ft_pb(&stack_A,&stack_B);  
     ft_printf("---------\n");
     printstact(&stack_A);
-    ft_pa(&stack_A,&stack_B);
     ft_printf("---------\n");
-     printstact(&stack_A);
-    // ft_pa(&stack_A,&stack_B);
-    // printstact(&stack_A);
-    // ft_printf("---------\n");
-    // printstact(&stack_B);
-    // ft_pb(&stack_A,&stack_B);
-    // ft_printf("---------\n");
-    // printstact(&stack_A);
-    // ft_printf("---------\n");
-    // printstact(&stack_B);
+    printstact(&stack_B);
+    ft_ss(&stack_A,&stack_B);
+    ft_printf("---------\n");
+    printstact(&stack_A);
+    ft_printf("---------\n");
+    printstact(&stack_B);
+
 	return (0);
 }
