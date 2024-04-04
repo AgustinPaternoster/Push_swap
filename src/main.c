@@ -32,27 +32,12 @@ int main(int arg, char **argv)
     stack_A = NULL;
     stack_B = NULL;
 
+    if(!check_err(arg,argv))
+    {
+        write(1,"Error\n",6);
+        return (0);
+    }
 	if(!start(&stack_A,argv,arg))
-		 write(1,"Error\n",6); 
-    start(&stack_B,argv,arg);
-    printstact(&stack_A);
-    ft_printf("---------\n");
-    printstact(&stack_B);
-    ft_rrr(&stack_A , &stack_B);
-    ft_printf("---------\n");
-    printstact(&stack_A);
-    ft_printf("---------\n");
-    printstact(&stack_B);
-    // ft_pb(&stack_A,&stack_B);
-    // ft_pb(&stack_A,&stack_B);  
-    // ft_printf("---------\n");
-    // printstact(&stack_A);
-    // ft_printf("---------\n");
-    // printstact(&stack_B);
-    // ft_ss(&stack_A,&stack_B);
-    // ft_printf("---------\n");
-    // printstact(&stack_A);
-    // ft_printf("---------\n");
-    // printstact(&stack_B);
+		 write(1,"Error\n",6);
 	return (0);
 }

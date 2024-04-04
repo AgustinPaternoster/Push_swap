@@ -1,9 +1,9 @@
 #include "../include/push_swap.h"
 
-int ft_atoi(char *str)
+long ft_atoi(char *str)
 {
     int i;
-    int nb;
+    long nb;
     int sign;
 
     sign = 1;
@@ -22,4 +22,21 @@ int ft_atoi(char *str)
         i++;
     }
     return (nb * sign);
+}
+
+int ft_isdigit(char c)
+{ 
+    if(c > 47 && c < 58 || c == 43 || c == 45)
+        return (1);
+    return (0);
+}
+
+int ft_strlen(char *str)
+{
+    int i;
+
+    i = 0;
+    while(str[i])
+        i++;
+    return (i);
 }
