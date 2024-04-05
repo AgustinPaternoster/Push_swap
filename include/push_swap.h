@@ -14,7 +14,7 @@ typedef struct l_stack
 }t_stack;
 
 //ft_utils
-long ft_atoi(char *str);
+long ft_atol(char *str);
 int ft_isdigit(char c);
 int ft_strlen(char *str);
 
@@ -41,6 +41,7 @@ void ft_rra(t_stack **stack_a);
 void ft_rrb(t_stack **stack_b);
 void ft_rrr(t_stack **stack_a, t_stack **stack_b);
 //errors
+
 int check_err(int arc, char **argv);
 int check_dup(int arc, char **argv);
 

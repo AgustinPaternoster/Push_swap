@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-long ft_atoi(char *str)
+long ft_atol(char *str)
 {
     int i;
     long nb;
@@ -39,4 +39,14 @@ int ft_strlen(char *str)
     while(str[i])
         i++;
     return (i);
+}
+
+int find_idx(int nb,int *stack)
+{
+    int i;
+
+    i = 0;
+    while (stack[i] != nb)
+        i++;
+    return(i);
 }

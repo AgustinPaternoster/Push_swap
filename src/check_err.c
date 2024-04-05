@@ -5,7 +5,7 @@ int check_limits(char *str)
     long nb;
     static int chk;
 
-    nb = ft_atoi(str);
+    nb = ft_atol(str);
     if(nb > INT_MAX || nb < INT_MIN)
         return (0);
     return(1);
@@ -42,7 +42,7 @@ int check_dup(int arc, char **argv)
     i = 1;
     while (i < arc)
         {
-            arr[i - 1] = ft_atoi(argv[i]);
+            arr[i - 1] = ft_atol(argv[i]);
             i++;
         }
     i = 0;
