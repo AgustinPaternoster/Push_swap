@@ -20,15 +20,12 @@ int  *create_stack_C(char **argv , int arg)
 	return (stack_c);
 }
 
-int find_idx(int nb,int *stack , int len)
+int find_idx(int nb,int *stack)
 {
     int i;
 
     i = 0;
-    while (i < len)
-    {
-        if(nb == stack[i])
-            return (i + 1);
+    while (stack[i] != nb)
         i++;
-    }
+    return(i);
 }

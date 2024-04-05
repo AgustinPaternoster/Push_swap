@@ -17,13 +17,14 @@ typedef struct l_stack
 long ft_atoi(char *str);
 int ft_isdigit(char c);
 int ft_strlen(char *str);
+
 //ft_stack
 t_stack *create_node(int nb, int idx);
 void printstact(t_stack ** stack);
 void add_stack(t_stack ** stack,t_stack *node);
 int  *create_stack_C(char **argv , int arg);
 void counting_sort(int *a, int length);
-int find_idx(int nb,int *stack , int len);
+int find_idx(int nb,int *stack);
 t_stack *last_node(t_stack **stack);
 int len_stack(t_stack **stack);
 //movements

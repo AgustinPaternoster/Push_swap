@@ -14,7 +14,7 @@ int start(t_stack **stack_A, char **argv , int arg)
     while (i < arg)
     {
 		nb = ft_atoi(argv[i]);
-        new_node = create_node(nb, find_idx(nb, stack_c, arg - 1));
+        new_node = create_node(nb, find_idx(nb, stack_c));
         if (!new_node)
             return(0);
         add_stack(stack_A,new_node);
@@ -27,16 +27,13 @@ int main(int arg, char **argv)
 {
     t_stack *stack_A;
     t_stack *stack_B;
-    int *test;
 
     stack_A = NULL;
     stack_B = NULL;
 
-    if(!check_err(arg,argv))
-    {
-        write(1,"Error\n",6);
-        return (0);
-    }
+    if (arg == 1)
+        return(ft_printf("Error\n"),0);
+    
 	if(!start(&stack_A,argv,arg))
 		 write(1,"Error\n",6);
 	return (0);
