@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-t_stack *create_node(int nb, int idx)
+t_stack *create_node(int nb)
 {
     t_stack *node;
 
@@ -8,7 +8,6 @@ t_stack *create_node(int nb, int idx)
     if(!node)
         return (NULL);
     node->nb = nb;
-    node->idx = idx;
     node->next = NULL;
     node->prev = NULL;
 	return(node);

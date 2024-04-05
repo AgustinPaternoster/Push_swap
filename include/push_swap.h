@@ -19,7 +19,7 @@ int ft_isdigit(char c);
 int ft_strlen(char *str);
 
 //ft_stack
-t_stack *create_node(int nb, int idx);
+t_stack *create_node(int nb);
 void printstact(t_stack ** stack);
 void add_stack(t_stack ** stack,t_stack *node);
 int  *create_stack_C(char **argv , int arg);

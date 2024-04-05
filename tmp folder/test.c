@@ -2,61 +2,19 @@
 #include <stdio.h>
 #include <limits.h>
 
-long ft_atoi(char *str)
+void printtest(int argc, char **argv)
 {
-    int i;
-    long nb;
-    int sign;
+    int i = 0;
 
-    sign = 1;
-    nb = 0;
-	i = 0;
-    if(str[0] == 45 | str[0] == 43)
+    while (i < argc)
     {
-        if(str[0] == 45)
-            sign = -1;
+        printf("%s\n",argv[i]);
         i++;
     }
-    while(str[i])
-    {
-        nb *= 10;
-		nb += str[i] - 48;
-        i++;
-    }
-    return (nb * sign);
-}
-int check_dup(int arc, char **argv)
-{
-    int i;
-    int k;
-    int size;
-    int arr[arc - 1];
-
-    size = arc - 1;
-    i = 1;
-    while (i < arc)
-        {
-            arr[i - 1] = ft_atoi(argv[i]);
-            i++;
-        }
-    i = 0;
-    while(i < size)
-    {
-        k = 1 + i;
-        while (k < size)
-        {
-            if(arr[i] == arr[k])
-                return (0);
-            k++;
-        }
-        i++;
-    }
-    return (1);
-}
+} 
 
 int main(int argc, char **argv) 
 {
-    int i = check_dup(argc, argv);
-    printf("i :%d\n", i);
+    printtest(argc - 1 , argv + 1);
     return (0);
 }
