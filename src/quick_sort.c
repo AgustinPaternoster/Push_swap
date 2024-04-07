@@ -1,6 +1,6 @@
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-void swap(int *x , int *y)
+void ft_swap(int *x , int *y)
 {
     int tmp;
     tmp = *x;
@@ -17,13 +17,13 @@ int partition(int arr[],int low, int high)
     {
         if (arr[j] <= pivot_value)
         {
-            swap(&arr[i],&arr[j]);
+            ft_swap(&arr[i],&arr[j]);
             i++;
         }
         j++;
     }
 
-    swap(&arr[i],&arr[high]);
+    ft_swap(&arr[i],&arr[high]);
     return i;
     
 }

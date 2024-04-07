@@ -1,79 +1,40 @@
 #include "../include/push_swap.h"
 
-int check_limits(char *str)
-{
-    long nb;
-    static int chk;
-
-    nb = ft_atol(str);
-    if(nb > INT_MAX || nb < INT_MIN)
-        return (0);
-    return(1);
-}
-
 int check_int(char * str)
 {
     int i;
-    int chksign;
-    
+
     i = 0;
-    chksign = 0;
-    while(str[i])
-    {
-        if(!ft_isdigit(str[i]))
-            return (0);
-        if(str[i] == 43 || str[i] == 45)
-            chksign++;
+    while(str[i] && ft_isspace(str[i]))
         i++;
-    }
-    if (chksign > 1)
-        return (0);
-    return (1);
-}
-
-int check_dup(int arc, char **argv)
-{
-    int i;
-    int k;
-    int size;
-    int arr[arc - 1];
-
-    size = arc - 1;
-    i = 1;
-    while (i < arc)
-        {
-            arr[i - 1] = ft_atol(argv[i]);
-            i++;
-        }
-    i = 0;
-    while(i < size)
-    {
-        k = 1 + i;
-        while (k < size)
-        {
-            if(arr[i] == arr[k])
-                return (0);
-            k++;
-        }
+    if (str[i] == 43 || str[i] == 45)
+        i++;
+    while (str[i])
+    {  
+        if (!ft_isdigit(str[i]))
+            return (0);
         i++;
     }
     return (1);
 }
 
-int check_err(int arc, char **argv)
+int check_dup(t_stack **stack_a)
 {
-    int i;
+   t_stack *node;
+   t_stack *tmp;
 
-    i = 1;
-    while( i < arc)
-    {
-        if(!check_int(argv[i]))
-            return (0);
-        if(!check_limits(argv[i]))
-            return(0);
-        i++;
-    }
-    if (!check_dup(arc,argv))
-        return (0);
-    return(1);
+   node = *stack_a;
+   while(node != NULL)
+   {
+        tmp = node->next;
+        while(tmp != NULL)
+        {
+            if (node->nb == tmp->nb)
+                return (1);
+            tmp = tmp->next;
+        }
+        node = node->next;
+   }
+   return (0);
 }
+

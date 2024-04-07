@@ -32,32 +32,39 @@ int get_idx(t_stack **stack_a)
     stack_c = ft_stack_c(stack_a, size);
     if (!stack_c)
         return (0);
-    counting_sort(stack_c , size);
+    quick_sort(stack_c , size);
     while(tmp != NULL)
     {
         tmp->idx = find_idx(tmp->nb,stack_c);
         tmp = tmp->next;
     }
+    return (1);
 }
 
 int start(t_stack **stack_A, char **argv , int arg)
 {
     int i;
-    int nb;
+    long nb;
     t_stack *new_node;
 
     i = 0;
     while (i < arg)
     {
+        if (!check_int(argv[i]))
+            return (free_stack(stack_A),0);
         nb = ft_atol(argv[i]);
+        if(nb > INT_MAX || nb < INT_MIN)
+            return (free_stack(stack_A),0);
         new_node = create_node(nb);
         if (!new_node)
-            return(0);
+            return (free_stack(stack_A),0);
         add_stack(stack_A,new_node);
         i++;
     }
+    if (check_dup(stack_A))
+        return (free_stack(stack_A),0);
     if(!get_idx(stack_A))
-        return (0);
+        return (free_stack(stack_A),0);
     return (1);
 }
 

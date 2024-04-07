@@ -4,7 +4,7 @@ CFILES = main.c\
 		ft_utils.c\
 		stack_fn.c\
 		ft_push_m.c\
-		counting_sort.c\
+		quick_sort.c\
 		ft_swap_m.c\
 		ft_rotate_m.c\
 		ft_rrotate_m.c\

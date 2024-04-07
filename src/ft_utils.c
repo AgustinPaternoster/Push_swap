@@ -24,23 +24,6 @@ long ft_atol(char *str)
     return (nb * sign);
 }
 
-int ft_isdigit(char c)
-{ 
-    if(c > 47 && c < 58 || c == 43 || c == 45)
-        return (1);
-    return (0);
-}
-
-int ft_strlen(char *str)
-{
-    int i;
-
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
-}
-
 int find_idx(int nb,int *stack)
 {
     int i;
@@ -49,4 +32,19 @@ int find_idx(int nb,int *stack)
     while (stack[i] != nb)
         i++;
     return(i);
+}
+
+int ft_isdigit(char c)
+{ 
+    if(c > 47 && c < 58)
+        return (1);
+    return (0);
+}
+
+int ft_isspace(char c)
+{
+    if (c == 32 || c == '\f' || c == '\n' || c == '\r'
+        || c == '\t' || c == '\v')
+        return (1);
+    return (0);
 }

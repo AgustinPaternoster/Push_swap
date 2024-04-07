@@ -70,3 +70,18 @@ int len_stack(t_stack **stack)
 	}
 	return (i);
 }
+
+void free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+	t_stack *node;
+
+	node = *stack;
+	while(node != NULL)
+	{
+		tmp = node->next;
+		free(node);
+		node = tmp;
+	}
+	*stack = NULL;
+}
