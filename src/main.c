@@ -21,7 +21,7 @@ int *ft_stack_c(t_stack **stack_a, int size)
 }
 
 
-int get_idx(t_stack **stack_a)
+int set_idx(t_stack **stack_a)
 {
     t_stack *tmp;
     int *stack_c;
@@ -63,8 +63,9 @@ int start(t_stack **stack_A, char **argv , int arg)
     }
     if (check_dup(stack_A))
         return (free_stack(stack_A),0);
-    if(!get_idx(stack_A))
+    if(!set_idx(stack_A))
         return (free_stack(stack_A),0);
+	set_stack_pos(stack_A);
     return (1);
 }
 
@@ -81,6 +82,7 @@ int main(int arg, char **argv)
     
 	if(!start(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
+	ft_printf("%d\n",check_sort(&stack_A));
     printstact(&stack_A);
 	return (0);
 }

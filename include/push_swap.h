@@ -9,6 +9,7 @@ typedef struct l_stack
 {
     int idx;
     int nb;
+	int position;
     struct l_stack *prev;
     struct l_stack *next;
 }t_stack;
@@ -29,6 +30,12 @@ void quick_sort(int *a,int lenght);
 t_stack *last_node(t_stack **stack);
 int len_stack(t_stack **stack);
 void free_stack(t_stack **stack);
+void set_stack_pos(t_stack **stack);
+int check_sort(t_stack **stack);
+void sort_stack(t_stack **stack_a, t_stack **stack_b);
+int set_idx(t_stack **stack_a);
+int get_idx(t_stack **stack, int pos);
+
 //movements
 void push(t_stack ** dst , t_stack ** src);
 void ft_pa(t_stack ** stack_a , t_stack ** stack_b);
