@@ -73,6 +73,7 @@ int main(int arg, char **argv)
 {
     t_stack *stack_A;
     t_stack *stack_B;
+	t_stack *highest;
 
     stack_A = NULL;
     stack_B = NULL;
@@ -82,7 +83,7 @@ int main(int arg, char **argv)
     
 	if(!start(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
-	ft_printf("%d\n",check_sort(&stack_A));
-    printstact(&stack_A);
+	highest = find_highest(&stack_A);
+	ft_printf("idx: %d pos:%d",highest->idx, highest->position);
 	return (0);
 }
