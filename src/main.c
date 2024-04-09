@@ -41,7 +41,7 @@ int set_idx(t_stack **stack_a)
     return (1);
 }
 
-int start(t_stack **stack_A, char **argv , int arg)
+int init_stack(t_stack **stack_A, char **argv , int arg)
 {
     int i;
     long nb;
@@ -81,9 +81,8 @@ int main(int arg, char **argv)
     if (arg == 1)
         return(ft_printf("Error\n"),0);
     
-	if(!start(&stack_A, argv + 1 ,arg - 1))
+	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
-	highest = find_highest(&stack_A);
-	ft_printf("idx: %d pos:%d",highest->idx, highest->position);
+	printstact(&stack_A);
 	return (0);
 }

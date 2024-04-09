@@ -25,7 +25,7 @@ void printstact(t_stack ** stack)
 		ft_printf("NULL\n");
 	while (tmp != NULL)
 	{
-		ft_printf("nb: %d idx: %d\n pos: %d\n", tmp->nb, tmp->idx, tmp->position);
+		ft_printf("nb: %d idx: %d pos: %d\n", tmp->nb, tmp->idx, tmp->position);
 		tmp = tmp->next;
 	}
 }
@@ -36,7 +36,7 @@ void set_stack_pos(t_stack **stack)
 	t_stack *tmp;
 
 	tmp = *stack;
-	i = 0;
+	i = 1;
 	while(tmp !=NULL)
 	{
 		tmp->position = i;
@@ -59,17 +59,37 @@ t_stack *find_node(t_stack **stack, int pos)
 	return (0);
 }
 
-int get_idx(t_stack **stack, int pos)
-{
-	t_stack *tmp;
-	int idx;
+// int get_idx(t_stack **stack, int pos)
+// {
+// 	t_stack *tmp;
+// 	int idx;
 
-	tmp = *stack;
-	while(tmp != NULL)
+// 	tmp = *stack;
+// 	while(tmp != NULL)
+// 	{
+// 		if (tmp->position == pos)
+// 			return (tmp->idx);
+// 		tmp = tmp->next;
+// 	}
+// 	return (0);
+// }
+int check_sort(t_stack **stack)
+{
+	int check;
+	t_stack *node;
+	t_stack *tmp;
+	
+	node = *stack;
+	while(node != NULL)
 	{
-		if (tmp->position == pos)
-			return (tmp->idx);
-		tmp = tmp->next;
+		tmp = node->next;
+		while(tmp != NULL)
+		{
+			if(node->idx > tmp->idx)
+				return (0);
+			tmp = tmp->next;
+		}
+		node = node->next;
 	}
-	return (0);
+	return (1);
 }

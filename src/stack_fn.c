@@ -57,25 +57,22 @@ void free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-int check_sort(t_stack **stack)
+int set_idx(t_stack **stack_a)
 {
-	int check;
-	t_stack *node;
-	t_stack *tmp;
-	
-	node = *stack;
-	while(node != NULL)
-	{
-		tmp = node->next;
-		while(tmp != NULL)
-		{
-			if(node->idx > tmp->idx)
-				return (0);
-			tmp = tmp->next;
-		}
-		node = node->next;
-	}
-	return (1);
+    t_stack *tmp;
+    int *stack_c;
+    int size;
+
+    size = len_stack(stack_a);
+    tmp = *stack_a;
+    stack_c = ft_stack_c(stack_a, size);
+    if (!stack_c)
+        return (0);
+    quick_sort(stack_c , size);
+    while(tmp != NULL)
+    {
+        tmp->idx = find_idx(tmp->nb,stack_c);
+        tmp = tmp->next;
+    }
+    return (1);
 }
-
-

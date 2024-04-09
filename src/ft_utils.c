@@ -31,7 +31,7 @@ int find_idx(int nb,int *stack)
     i = 0;
     while (stack[i] != nb)
         i++;
-    return(i);
+    return(i + 1);
 }
 
 int ft_isdigit(char c)
