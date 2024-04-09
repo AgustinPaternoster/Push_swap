@@ -1,44 +1,16 @@
 #include "../include/push_swap.h"
 
-int *ft_stack_c(t_stack **stack_a, int size)
+void sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *tmp;
-    int *stack;
-    int i;
-
-    stack = (int *)malloc(sizeof(int) * size);
-    if (!stack)
-        return (NULL);
-    i = 0;
-    tmp = *stack_a;
-    while(tmp != NULL)
-    {
-        stack[i] = tmp->nb;
-        tmp = tmp->next;
-        i++;
-    }
-    return (stack);
-}
-
-
-int set_idx(t_stack **stack_a)
-{
-    t_stack *tmp;
-    int *stack_c;
-    int size;
-
-    size = len_stack(stack_a);
-    tmp = *stack_a;
-    stack_c = ft_stack_c(stack_a, size);
-    if (!stack_c)
-        return (0);
-    quick_sort(stack_c , size);
-    while(tmp != NULL)
-    {
-        tmp->idx = find_idx(tmp->nb,stack_c);
-        tmp = tmp->next;
-    }
-    return (1);
+	int size;
+	
+	size = len_stack(stack_a);
+    if (check_sort(stack_a))
+        return;
+	if (size < 4 )
+		tiny_sort(stack_a);
+	else
+		return;
 }
 
 int init_stack(t_stack **stack_A, char **argv , int arg)
@@ -83,6 +55,7 @@ int main(int arg, char **argv)
     
 	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
+    //sort_stack(&stack_A, &stack_B);
 	printstact(&stack_A);
 	return (0);
 }

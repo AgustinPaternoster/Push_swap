@@ -39,6 +39,9 @@ int check_sort(t_stack **stack);
 t_stack *find_highest(t_stack **stack);
 t_stack *find_lowest(t_stack **stack);
 t_stack *find_node(t_stack **stack, int pos);
+
+//algorithm
+void tiny_sort(t_stack **stack);
 //movements
 void push(t_stack ** dst , t_stack ** src);
 void ft_pa(t_stack ** stack_a , t_stack ** stack_b);

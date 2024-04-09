@@ -24,15 +24,6 @@ long ft_atol(char *str)
     return (nb * sign);
 }
 
-int find_idx(int nb,int *stack)
-{
-    int i;
-
-    i = 0;
-    while (stack[i] != nb)
-        i++;
-    return(i + 1);
-}
 
 int ft_isdigit(char c)
 { 
