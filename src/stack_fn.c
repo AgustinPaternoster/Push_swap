@@ -13,18 +13,6 @@ t_stack *create_node(int nb)
 	return(node);
 }
 
-t_stack *last_node(t_stack **stack)
-{
-	t_stack *tmp;
-
-	tmp = *stack;
-	if(!tmp)
-		return (NULL);
-	while(tmp->next != NULL)
-		tmp = tmp->next;
-	return(tmp);
-}
-
 void add_stack(t_stack ** stack,t_stack *node)
 {
 	t_stack *tmp;

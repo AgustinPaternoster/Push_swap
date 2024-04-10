@@ -32,3 +32,15 @@ t_stack *find_lowest(t_stack **stack)
 	return (lowest);
 }
 
+t_stack *last_node(t_stack **stack)
+{
+	t_stack *tmp;
+
+	tmp = *stack;
+	if(!tmp)
+		return (NULL);
+	while(tmp->next != NULL)
+		tmp = tmp->next;
+	return(tmp);
+}
+

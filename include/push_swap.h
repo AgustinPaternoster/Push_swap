@@ -4,12 +4,15 @@
 #include <stdlib.h>
 #include "../printf/ft_printf.h"
 #include <limits.h>
+#include <stdbool.h>
 
 typedef struct l_stack 
 {
     int idx;
     int nb;
 	int position;
+    int cost;
+    bool above_median;
     struct l_stack *prev;
     struct l_stack *next;
 }t_stack;
@@ -31,10 +34,9 @@ t_stack *last_node(t_stack **stack);
 int len_stack(t_stack **stack);
 void free_stack(t_stack **stack);
 void set_stack_pos(t_stack **stack);
-int check_sort(t_stack **stack);
 int set_idx(t_stack **stack_a);
 //int get_idx(t_stack **stack, int pos);
-int check_sort(t_stack **stack);
+bool check_sort(t_stack **stack);
 t_stack *find_highest(t_stack **stack);
 t_stack *find_lowest(t_stack **stack);
 t_stack *find_node(t_stack **stack, int pos);
@@ -57,6 +59,6 @@ void ft_rra(t_stack **stack_a);
 void ft_rrb(t_stack **stack_b);
 void ft_rrr(t_stack **stack_a, t_stack **stack_b);
 //errors
-int check_int(char *str);
-int check_dup(t_stack **stack_a);
+bool check_int(char *str);
+bool check_dup(t_stack **stack_a);
 #endif

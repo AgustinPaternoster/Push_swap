@@ -73,7 +73,7 @@ t_stack *find_node(t_stack **stack, int pos)
 // 	}
 // 	return (0);
 // }
-int check_sort(t_stack **stack)
+bool check_sort(t_stack **stack)
 {
 	int check;
 	t_stack *node;
@@ -86,10 +86,10 @@ int check_sort(t_stack **stack)
 		while(tmp != NULL)
 		{
 			if(node->idx > tmp->idx)
-				return (0);
+				return (false);
 			tmp = tmp->next;
 		}
 		node = node->next;
 	}
-	return (1);
+	return (true);
 }

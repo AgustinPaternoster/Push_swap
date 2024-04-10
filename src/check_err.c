@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-int check_int(char * str)
+bool check_int(char * str)
 {
     int i;
 
@@ -12,13 +12,13 @@ int check_int(char * str)
     while (str[i])
     {  
         if (!ft_isdigit(str[i]))
-            return (0);
+            return (false);
         i++;
     }
-    return (1);
+    return (true);
 }
 
-int check_dup(t_stack **stack_a)
+bool check_dup(t_stack **stack_a)
 {
    t_stack *node;
    t_stack *tmp;
@@ -30,11 +30,11 @@ int check_dup(t_stack **stack_a)
         while(tmp != NULL)
         {
             if (node->nb == tmp->nb)
-                return (1);
+                return (true);
             tmp = tmp->next;
         }
         node = node->next;
    }
-   return (0);
+   return (false);
 }
 
