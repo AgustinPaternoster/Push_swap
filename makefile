@@ -8,7 +8,7 @@ CFILES = check_err.c\
 		ft_utils.c\
 		main.c\
 		quick_sort.c\
-		sort_stack_fn.c\
+		tiny_sort_stack.c\
 		stack_fn.c\
 		stack_utils.c\
 		stack_utils_2.c\

@@ -32,7 +32,6 @@ int len_stack(t_stack **stack);
 void free_stack(t_stack **stack);
 void set_stack_pos(t_stack **stack);
 int check_sort(t_stack **stack);
-void sort_stack(t_stack **stack_a, t_stack **stack_b);
 int set_idx(t_stack **stack_a);
 //int get_idx(t_stack **stack, int pos);
 int check_sort(t_stack **stack);
@@ -42,6 +41,8 @@ t_stack *find_node(t_stack **stack, int pos);
 
 //algorithm
 void tiny_sort(t_stack **stack);
+void large_sort(t_stack **stack_a, t_stack **stack_b);
+void sort_stack(t_stack **stack_a, t_stack **stack_b);
 //movements
 void push(t_stack ** dst , t_stack ** src);
 void ft_pa(t_stack ** stack_a , t_stack ** stack_b);
