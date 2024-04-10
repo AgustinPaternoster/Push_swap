@@ -13,7 +13,7 @@ void sort_stack(t_stack **stack_a, t_stack **stack_b)
 		return;
 }
 
-int init_stack(t_stack **stack_A, char **argv , int arg)
+bool init_stack(t_stack **stack_A, char **argv , int arg)
 {
     int i;
     long nb;
@@ -23,22 +23,22 @@ int init_stack(t_stack **stack_A, char **argv , int arg)
     while (i < arg)
     {
         if (!check_int(argv[i]))
-            return (free_stack(stack_A),0);
+            return (free_stack(stack_A),false);
         nb = ft_atol(argv[i]);
         if(nb > INT_MAX || nb < INT_MIN)
-            return (free_stack(stack_A),0);
+            return (free_stack(stack_A),false);
         new_node = create_node(nb);
         if (!new_node)
-            return (free_stack(stack_A),0);
+            return (free_stack(stack_A),false);
         add_stack(stack_A,new_node);
         i++;
     }
     if (check_dup(stack_A))
-        return (free_stack(stack_A),0);
+        return (free_stack(stack_A),false);
     if(!set_idx(stack_A))
-        return (free_stack(stack_A),0);
-	set_stack_pos(stack_A);
-    return (1);
+        return (free_stack(stack_A),false);
+    set_stack_pos(stack_A);
+    return (true);
 }
 
 int main(int arg, char **argv)
@@ -55,7 +55,7 @@ int main(int arg, char **argv)
     
 	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
-    sort_stack(&stack_A, &stack_B);
+    //sort_stack(&stack_A, &stack_B);
 	printstact(&stack_A);
 	return (0);
 }

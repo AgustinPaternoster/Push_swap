@@ -21,6 +21,8 @@ void push(t_stack ** dst , t_stack ** src)
 		node_to_move->next = *dst;
 		*dst = node_to_move;
 	}
+	set_stack_pos(src);
+	set_stack_pos(dst);
 }
 
 void ft_pa(t_stack ** stack_a , t_stack ** stack_b)

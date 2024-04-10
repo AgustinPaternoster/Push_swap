@@ -14,6 +14,7 @@ void rotate(t_stack **stack)
     lastnode->next = tmp;
     tmp->prev = lastnode;
     tmp->next = NULL;
+    set_stack_pos(stack);
 }
 
 void ft_ra(t_stack **stack_a)

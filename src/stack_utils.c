@@ -25,7 +25,7 @@ void printstact(t_stack ** stack)
 		ft_printf("NULL\n");
 	while (tmp != NULL)
 	{
-		ft_printf("nb: %d idx: %d pos: %d\n", tmp->nb, tmp->idx, tmp->position);
+		ft_printf("nb: %d idx: %d pos: %d med:%d\n", tmp->nb, tmp->idx, tmp->position , tmp->above_median);
 		tmp = tmp->next;
 	}
 }
@@ -34,15 +34,22 @@ void set_stack_pos(t_stack **stack)
 {
 	int i;
 	t_stack *tmp;
+	int len;
 
+	len = len_stack(stack);
 	tmp = *stack;
 	i = 1;
 	while(tmp !=NULL)
 	{
 		tmp->position = i;
+		if ((len / 2) >=  i)
+			tmp->above_median = true;
+		else
+			tmp->above_median = false;
 		tmp = tmp->next;
 		i++;
 	}
+
 }
 
 t_stack *find_node(t_stack **stack, int pos)

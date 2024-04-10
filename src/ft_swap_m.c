@@ -12,6 +12,7 @@ void swap(t_stack **stack)
     tmp->next = (*stack)->next;
     (*stack)->next = tmp;
     tmp->prev = *stack;
+    set_stack_pos(stack);
 }
 
 void ft_sa(t_stack **stack_a)
