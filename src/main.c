@@ -10,7 +10,7 @@ void sort_stack(t_stack **stack_a, t_stack **stack_b)
 	if (size < 4 )
 		tiny_sort(stack_a);
 	else
-		return;
+		large_sort(stack_a,stack_b);
 }
 
 bool init_stack(t_stack **stack_A, char **argv , int arg)

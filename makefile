@@ -17,7 +17,7 @@ CFILES = check_err.c\
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 HEADER = include/push_swap.h
-NAME = a.out
+NAME = app
 PRINTF = printf/libftprintf.a
 
 all : $(NAME)

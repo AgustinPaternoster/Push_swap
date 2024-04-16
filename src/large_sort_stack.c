@@ -42,6 +42,6 @@ void large_sort(t_stack **stack_a, t_stack **stack_b)
 
     // }
     tiny_sort(stack_a);
-    
+    finish_sort(stack_a,stack_b);
     return;
 }
