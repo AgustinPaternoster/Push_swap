@@ -19,7 +19,7 @@ void tiny_sort(t_stack **stack)
 	}
 	else
 	{
-		if (find_node(stack,2) == find_highest(stack))
+		if (find_node_bypos(stack,2) == find_highest(stack))
 			ft_rra(stack);
 		else
 			ft_sa(stack);	

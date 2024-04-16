@@ -44,3 +44,5 @@ t_stack *last_node(t_stack **stack)
 	return(tmp);
 }
 
+
+

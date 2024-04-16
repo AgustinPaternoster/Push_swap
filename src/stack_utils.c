@@ -52,7 +52,7 @@ void set_stack_pos(t_stack **stack)
 
 }
 
-t_stack *find_node(t_stack **stack, int pos)
+t_stack *find_node_bypos(t_stack **stack, int pos)
 {
 	t_stack *tmp;
 
@@ -64,6 +64,20 @@ t_stack *find_node(t_stack **stack, int pos)
 		tmp = tmp->next;
 	}
 	return (0);
+}
+
+t_stack *find_node_byidx(t_stack **stack, int idx)
+{
+	t_stack *tmp;
+
+	tmp = *stack;
+	while( tmp !=NULL)
+	{
+		if (tmp->idx == idx)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	return(NULL);
 }
 
 // int get_idx(t_stack **stack, int pos)

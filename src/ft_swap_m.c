@@ -20,6 +20,7 @@ void ft_sa(t_stack **stack_a)
     if (!*stack_a)
         return;
     swap(stack_a);
+    ft_printf("sa\n");
 }
 
 void ft_sb(t_stack **stack_b)
@@ -27,10 +28,12 @@ void ft_sb(t_stack **stack_b)
     if (!*stack_b)
         return;
     swap(stack_b);
+    ft_printf("sa\n");
 }
 
 void ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
     ft_sa(stack_a);
     ft_sb(stack_b);
+    ft_printf("ss\n");
 }

@@ -39,7 +39,8 @@ int set_idx(t_stack **stack_a);
 bool check_sort(t_stack **stack);
 t_stack *find_highest(t_stack **stack);
 t_stack *find_lowest(t_stack **stack);
-t_stack *find_node(t_stack **stack, int pos);
+t_stack *find_node_bypos(t_stack **stack, int pos);
+t_stack *find_node_byidx(t_stack **stack, int idx);
 
 //algorithm
 void tiny_sort(t_stack **stack);

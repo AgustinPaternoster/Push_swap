@@ -22,6 +22,7 @@ void ft_rra(t_stack **stack_a)
     if(!*stack_a)
         return;
     rrotate(stack_a);
+    ft_printf("rra\n");
 }
 
 void ft_rrb(t_stack **stack_b)
@@ -29,10 +30,12 @@ void ft_rrb(t_stack **stack_b)
     if(!*stack_b)
         return;
     rrotate(stack_b);
+    ft_printf("rrb\n");
 }
 
 void ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
     ft_rra(stack_a);
     ft_rrb(stack_b);
+    ft_printf("rrr\n");
 }
