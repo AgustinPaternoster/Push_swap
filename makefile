@@ -24,11 +24,11 @@ all : $(NAME)
 
 $(NAME) : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF)
+	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF) -o $(NAME)
 
 debug : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	$(CC) -g $(SRC_FILES) $(HEADER) $(PRINTF)
+	$(CC) -g $(SRC_FILES) $(HEADER) $(PRINTF) -o $(NAME)
 
 clean :
 	make clean -C printf

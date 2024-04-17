@@ -66,19 +66,44 @@ t_stack *find_node_bypos(t_stack **stack, int pos)
 	return (0);
 }
 
-t_stack *find_node_byidx(t_stack **stack, int idx)
+
+t_stack *find_closer_big(t_stack **stack, int idx)
 {
 	t_stack *tmp;
+	int idx_obj;
+	int idx_higest;
 
 	tmp = *stack;
-	while( tmp !=NULL)
+	idx_obj = idx + 1;
+	idx_higest = (find_highest(stack))->idx;
+
+	while (idx_obj <= idx_higest)
 	{
-		if (tmp->idx == idx)
-			return (tmp);
+		while( tmp !=NULL)
+		{
+			if (tmp->idx == idx_obj)
+				return (tmp);
 		tmp = tmp->next;
+		}
+		idx_obj++;
 	}
 	return(NULL);
 }
+
+
+// t_stack *find_node_byidx(t_stack **stack, int idx)
+// {
+// 	t_stack *tmp;
+
+// 	tmp = *stack;
+// 	while( tmp !=NULL)
+// 	{
+// 		if (tmp->idx == idx)
+// 			return (tmp);
+// 		tmp = tmp->next;
+// 	}
+// 	return(NULL);
+// }
 
 // int get_idx(t_stack **stack, int pos)
 // {

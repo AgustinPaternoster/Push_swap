@@ -23,7 +23,5 @@ void tiny_sort(t_stack **stack)
 			ft_rra(stack);
 		else
 			ft_sa(stack);	
-	}
-	
+	}	
 }
-

@@ -10,6 +10,7 @@ void swap(t_stack **stack)
     *stack = tmp->next;
     (*stack)->prev = NULL;
     tmp->next = (*stack)->next;
+    (*stack)->next->prev = tmp;
     (*stack)->next = tmp;
     tmp->prev = *stack;
     set_stack_pos(stack);
