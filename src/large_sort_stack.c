@@ -20,8 +20,6 @@ void finish_sort(t_stack **stack_a , t_stack **stack_b)
     while(*stack_b !=NULL)
     {
         target_node = find_closer_big(stack_a,(*stack_b)->idx);
-        if (!target_node)
-            target_node = find_lowest(stack_a);
         send_to_top_a(stack_a,target_node);
         ft_pa(stack_a,stack_b);
     }

@@ -87,9 +87,51 @@ t_stack *find_closer_big(t_stack **stack, int idx)
 		}
 		idx_obj++;
 	}
-	return(NULL);
+	return(find_lowest(stack));
 }
 
+t_stack *find_closer_smll(t_stack **stack, int idx)
+{
+	t_stack *tmp;
+	int idx_obj;
+
+	tmp = *stack;
+	idx_obj = idx - 1;
+
+	while (idx_obj >= 1)
+	{
+		while( tmp !=NULL)
+		{
+			if (tmp->idx == idx_obj)
+				return (tmp);
+		tmp = tmp->next;
+		}
+		idx_obj--;
+	}
+	return(find_highest(stack));
+}
+
+
+bool check_sort(t_stack **stack)
+{
+	int check;
+	t_stack *node;
+	t_stack *tmp;
+	
+	node = *stack;
+	while(node != NULL)
+	{
+		tmp = node->next;
+		while(tmp != NULL)
+		{
+			if(node->idx > tmp->idx)
+				return (false);
+			tmp = tmp->next;
+		}
+		node = node->next;
+	}
+	return (true);
+}
 
 // t_stack *find_node_byidx(t_stack **stack, int idx)
 // {
@@ -119,23 +161,3 @@ t_stack *find_closer_big(t_stack **stack, int idx)
 // 	}
 // 	return (0);
 // }
-bool check_sort(t_stack **stack)
-{
-	int check;
-	t_stack *node;
-	t_stack *tmp;
-	
-	node = *stack;
-	while(node != NULL)
-	{
-		tmp = node->next;
-		while(tmp != NULL)
-		{
-			if(node->idx > tmp->idx)
-				return (false);
-			tmp = tmp->next;
-		}
-		node = node->next;
-	}
-	return (true);
-}
