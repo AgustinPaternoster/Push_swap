@@ -1,5 +1,25 @@
 #include "../include/push_swap.h"
 
+
+t_stack *find_costless_node(t_stack **stack_a)
+{
+    t_stack *tmp;
+    t_stack *node;
+    int cost;
+
+
+    tmp = (*stack_a)->next;
+    node = *stack_a;
+    cost = node->cost;
+    while (tmp != NULL)
+    {
+        if(cost > tmp->cost)
+            node = tmp;
+        tmp = tmp->next;
+    }
+    return (node);
+}
+
 int count_mov(t_stack **stack , t_stack *target)
 {
     int mov;
