@@ -25,7 +25,7 @@ void printstact(t_stack ** stack)
 		ft_printf("NULL\n");
 	while (tmp != NULL)
 	{
-		ft_printf("nb: %d idx: %d pos: %d med:%d\n", tmp->nb, tmp->idx, tmp->position , tmp->above_median);
+		ft_printf("nb: %d idx: %d pos: %d cost:%d\n", tmp->nb, tmp->idx, tmp->position , tmp->cost);
 		tmp = tmp->next;
 	}
 }

@@ -55,9 +55,13 @@ int main(int arg, char **argv)
     
 	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
-    target = find_node_bypos(&stack_A, 7);
-    ft_printf("x:%d", count_mov(&stack_A,target));
+    ft_pb(&stack_A,&stack_B);
+    ft_pb(&stack_A,&stack_B);
+    cost_calculation(&stack_A,&stack_B);
+    printstact(&stack_A);
+    ft_pb(&stack_A,&stack_B);
+    cost_calculation(&stack_A,&stack_B);
     //sort_stack(&stack_A, &stack_B);
-	//printstact(&stack_A);
+	printstact(&stack_A);
 	return (0);
 }

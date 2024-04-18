@@ -44,6 +44,7 @@ t_stack *find_node_byidx(t_stack **stack, int idx);
 t_stack *find_closer_big(t_stack **stack, int idx);
 t_stack *find_closer_smll(t_stack **stack, int idx);
 int count_mov(t_stack **stack , t_stack *target);
+void cost_calculation(t_stack **stack_a , t_stack **stack_b);
 
 //algorithm
 void tiny_sort(t_stack **stack);
