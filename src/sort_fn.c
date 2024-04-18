@@ -23,13 +23,15 @@ void cost_calculation(t_stack **stack_a , t_stack **stack_b)
     t_stack *node;
     t_stack *target;
     int cost;
+    int len_b; 
 
     node = *stack_a;
+    len_b = len_stack(stack_b);
     while (node != NULL)
     {
         cost = 0;
         target = find_closer_smll(stack_b,node->idx);
-        if (target->above_median == node->above_median)
+        if (target->above_median == node->above_median || len_b == 2 )
         {
             cost = count_mov(stack_a,node);
             if (count_mov(stack_b,target) > cost)

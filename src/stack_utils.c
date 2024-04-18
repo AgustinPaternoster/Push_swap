@@ -85,6 +85,7 @@ t_stack *find_closer_big(t_stack **stack, int idx)
 				return (tmp);
 		tmp = tmp->next;
 		}
+		tmp = *stack;
 		idx_obj++;
 	}
 	return(find_lowest(stack));
@@ -97,7 +98,6 @@ t_stack *find_closer_smll(t_stack **stack, int idx)
 
 	tmp = *stack;
 	idx_obj = idx - 1;
-
 	while (idx_obj >= 1)
 	{
 		while( tmp !=NULL)
@@ -106,6 +106,7 @@ t_stack *find_closer_smll(t_stack **stack, int idx)
 				return (tmp);
 		tmp = tmp->next;
 		}
+		tmp = *stack;
 		idx_obj--;
 	}
 	return(find_highest(stack));
