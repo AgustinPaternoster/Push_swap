@@ -23,7 +23,7 @@ void add_stack(t_stack ** stack,t_stack *node)
 		*stack = node;
 	else
 	{
-		lastnode = last_node(stack);
+		lastnode = find_last_node(stack);
 		lastnode->next = node;
 		node->prev = lastnode;
 	}

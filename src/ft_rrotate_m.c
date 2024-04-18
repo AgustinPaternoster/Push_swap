@@ -6,7 +6,7 @@ void rrotate(t_stack **stack)
     t_stack *lastnode;
 
     tmp = *stack;
-    lastnode = last_node(stack);
+    lastnode = find_last_node(stack);
     if(!tmp->next)
         return;
     *stack = lastnode;

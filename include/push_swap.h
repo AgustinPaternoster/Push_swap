@@ -30,7 +30,7 @@ void printstact(t_stack ** stack);
 void add_stack(t_stack ** stack,t_stack *node);
 int *ft_stack_c(t_stack **stack_a, int size);
 void quick_sort(int *a,int lenght);
-t_stack *last_node(t_stack **stack);
+t_stack *find_last_node(t_stack **stack);
 int len_stack(t_stack **stack);
 void free_stack(t_stack **stack);
 void set_stack_pos(t_stack **stack);

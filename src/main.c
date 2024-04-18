@@ -55,9 +55,7 @@ int main(int arg, char **argv)
     
 	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
 		 write(1,"Error\n",6);
-    //sort_stack(&stack_A, &stack_B);
-	//printstact(&stack_A);
-    small = find_closer_smll(&stack_A, 3);
-    ft_printf("x:%d",small->idx);
+    sort_stack(&stack_A, &stack_B);
+	printstact(&stack_A);
 	return (0);
 }
