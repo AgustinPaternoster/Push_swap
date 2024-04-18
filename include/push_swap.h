@@ -43,6 +43,7 @@ t_stack *find_node_bypos(t_stack **stack, int pos);
 t_stack *find_node_byidx(t_stack **stack, int idx);
 t_stack *find_closer_big(t_stack **stack, int idx);
 t_stack *find_closer_smll(t_stack **stack, int idx);
+int count_mov(t_stack **stack , t_stack *target);
 
 //algorithm
 void tiny_sort(t_stack **stack);

@@ -6,13 +6,14 @@ int count_mov(t_stack **stack , t_stack *target)
     t_stack *lastnode;
 
     mov = 0;
-    lastnode = last_node
+    lastnode = find_last_node(stack);
     if(target->above_median == true)
     {
         mov = target->position - 1;
     }
     else
     {
-        mov = 
+        mov = lastnode->position - target->position + 1;
     }
+    return (mov);
 }
