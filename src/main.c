@@ -63,5 +63,7 @@ int main(int arg, char **argv)
     cost_calculation(&stack_A,&stack_B);
     //sort_stack(&stack_A, &stack_B);
 	printstact(&stack_A);
+    target =find_costless_node(&stack_A);
+    ft_printf("%d\n",target->nb);
 	return (0);
 }
