@@ -18,19 +18,20 @@ CFILES = check_err.c\
 	node_mov_fn.c
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
+
 HEADER = include/push_swap.h
-NAME = a.out
+NAME = push_swap
 PRINTF = printf/libftprintf.a
 
 all : $(NAME)
 
 $(NAME) : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF)
+	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF) $(CFLAGS) -o $(NAME)
 
 debug : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
-	$(CC) -g $(SRC_FILES) $(HEADER) $(PRINTF)
+	$(CC) -g $(SRC_FILES) $(PRINTF) $(HEADER)
 
 clean :
 	make clean -C printf
@@ -40,3 +41,10 @@ fclean :
 	rm $(NAME)
 
 re : fclean all
+
+test2:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-100 -n 2))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+

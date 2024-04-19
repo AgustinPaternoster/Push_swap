@@ -9,7 +9,7 @@ long ft_atol(char *str)
     sign = 1;
     nb = 0;
 	i = 0;
-    if(str[0] == 45 | str[0] == 43)
+    if((str[0] == 45) || (str[0] == 43))
     {
         if(str[0] == 45)
             sign = -1;

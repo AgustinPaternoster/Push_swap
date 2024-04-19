@@ -5,12 +5,12 @@ void sort_stack(t_stack **stack_a, t_stack **stack_b)
 	int size;
 	
 	size = len_stack(stack_a);
-    if (check_sort(stack_a))
+    if(check_sort(stack_a))
         return;
-	if (size < 4 )
-		tiny_sort(stack_a);
-	else
-		large_sort(stack_a,stack_b);
+    else if(size < 4)
+        tiny_sort(stack_a);
+    else
+        large_sort(stack_a,stack_b);
 }
 
 bool init_stack(t_stack **stack_A, char **argv , int arg)
@@ -45,17 +45,13 @@ int main(int arg, char **argv)
 {
     t_stack *stack_A;
     t_stack *stack_B;
-	t_stack *target;
 
     stack_A = NULL;
     stack_B = NULL;
-
-    if (arg == 1)
+    if(arg == 1)
         return(ft_printf("Error\n"),0);
-    
-	if(!init_stack(&stack_A, argv + 1 ,arg - 1))
-		 write(1,"Error\n",6);
+    if(!init_stack(&stack_A, argv + 1 , arg - 1))
+        return(ft_printf("Error\n"),0);
     sort_stack(&stack_A, &stack_B);
-    printstact(&stack_A);
 	return (0);
 }
