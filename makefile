@@ -14,7 +14,8 @@ CFILES = check_err.c\
 	stack_utils.c\
 	stack_utils_2.c\
 	tiny_sort_stack.c\
-	sort_fn.c
+	sort_fn.c\
+	node_mov_fn.c
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 HEADER = include/push_swap.h

@@ -46,12 +46,17 @@ t_stack *find_closer_smll(t_stack **stack, int idx);
 int count_mov(t_stack **stack , t_stack *target);
 void cost_calculation(t_stack **stack_a , t_stack **stack_b);
 t_stack *find_costless_node(t_stack **stack_a);
+//node movements
+void send_to_top_a(t_stack **stack , t_stack *target);
+void send_to_top_b(t_stack **stack , t_stack *target);
+void node_movements(t_stack **stack_a , t_stack **stack_b);
+
 
 //algorithm
 void tiny_sort(t_stack **stack);
 void large_sort(t_stack **stack_a, t_stack **stack_b);
 void sort_stack(t_stack **stack_a, t_stack **stack_b);
-//movements
+//subject movements
 void push(t_stack ** dst , t_stack ** src);
 void ft_pa(t_stack ** stack_a , t_stack ** stack_b);
 void ft_pb(t_stack ** stack_a , t_stack ** stack_b);
