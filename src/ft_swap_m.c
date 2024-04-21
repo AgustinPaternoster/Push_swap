@@ -34,7 +34,7 @@ void ft_sb(t_stack **stack_b)
 
 void ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-    ft_sa(stack_a);
-    ft_sb(stack_b);
+    swap(stack_a);
+    swap(stack_b);
     ft_printf("ss\n");
 }

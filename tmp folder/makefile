@@ -38,7 +38,12 @@ $(NAME): $(OBJS)
 	@make -C printf
 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
 
-clean:
+debug: $(OBJS)
+	@make -C printf
+	$(CC) -g $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
+
+clean: 
+
 	rm -rf $(OBJ_PATH)
 
 fclean: clean
@@ -64,6 +69,12 @@ test5:				$(NAME)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
+test10:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 10))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
 test100:			$(NAME)	
 					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
 					./push_swap $(ARG) | ./checker_linux $(ARG)
@@ -82,5 +93,10 @@ test1000:			$(NAME)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
+test5000:			$(NAME)
+					$(eval ARG = $(shell shuf -i 0-5000 -n 5000))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 .PHONY: all clean fclean re test2 test3 test5 test100 test500 test1000

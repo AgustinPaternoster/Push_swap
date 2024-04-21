@@ -35,7 +35,7 @@ void ft_rrb(t_stack **stack_b)
 
 void ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    ft_rra(stack_a);
-    ft_rrb(stack_b);
+    rrotate(stack_a);
+    rrotate(stack_b);
     ft_printf("rrr\n");
 }

@@ -51,7 +51,8 @@ int main(int arg, char **argv)
     if(arg == 1)
         return(ft_printf("Error\n"),0);
     if(!init_stack(&stack_A, argv + 1 , arg - 1))
-        return(ft_printf("Error\n"),0);
+        return(ft_printf("Error\n"),free(stack_A),0);
     sort_stack(&stack_A, &stack_B);
+    free_stack(&stack_A);
 	return (0);
 }

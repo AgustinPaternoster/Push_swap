@@ -14,7 +14,10 @@ t_stack *find_costless_node(t_stack **stack_a)
     while (tmp != NULL)
     {
         if(cost > tmp->cost)
+        {
+            cost = tmp->cost;
             node = tmp;
+        }
         tmp = tmp->next;
     }
     return (node);
@@ -22,7 +25,7 @@ t_stack *find_costless_node(t_stack **stack_a)
 
 int count_mov(t_stack **stack , t_stack *target)
 {
-    int mov;
+    int mov;        
     t_stack *lastnode;
 
     mov = 0;
@@ -38,7 +41,7 @@ int count_mov(t_stack **stack , t_stack *target)
     return (mov);
 }
 
-void cost_calculation(t_stack **stack_a , t_stack **stack_b)
+void cost_calculation_a(t_stack **stack_a , t_stack **stack_b)
 {
     t_stack *node;
     t_stack *target;
@@ -60,6 +63,32 @@ void cost_calculation(t_stack **stack_a , t_stack **stack_b)
         else
         {
             cost = count_mov(stack_a,node) + count_mov(stack_b,target);
+        }
+        node->cost = cost;
+        node = node->next;
+    }
+}
+
+void cost_calculation_b(t_stack **stack_a , t_stack **stack_b)
+{
+    t_stack *node;
+    t_stack *target;
+    int cost;
+
+    node = *stack_b;
+    while (node != NULL)
+    {
+        cost = 0;
+        target = find_closer_big(stack_a,node->idx);
+        if (target->above_median == node->above_median)
+        {
+            cost = count_mov(stack_a,node);
+            if (count_mov(stack_b,target) > cost)
+                cost = count_mov(stack_b,target);
+        }
+        else
+        {
+            cost = count_mov(stack_a,target) + count_mov(stack_b,node);
         }
         node->cost = cost;
         node = node->next;

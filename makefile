@@ -43,8 +43,19 @@ fclean :
 re : fclean all
 
 test2:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-100 -n 2))
+					$(eval ARG = $(shell shuf -i 0-10 -n 10))
 					./push_swap $(ARG) | ./checker_linux $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
+test100:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-1000 -n 100))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+test500:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-1000 -n 500))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l

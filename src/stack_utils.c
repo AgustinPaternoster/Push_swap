@@ -15,20 +15,20 @@ int len_stack(t_stack **stack)
 	return (i);
 }
 
-// void printstact(t_stack ** stack)
-// {
-// 	t_stack *tmp;
+void printstact(t_stack ** stack)
+{
+	t_stack *tmp;
 
 	
-// 	tmp = *stack;
-// 	if(!tmp)
-// 		ft_printf("NULL\n");
-// 	while (tmp != NULL)
-// 	{
-// 		ft_printf("nb: %d idx: %d pos: %d cost:%d\n", tmp->nb, tmp->idx, tmp->position , tmp->cost);
-// 		tmp = tmp->next;
-// 	}
-// }
+	tmp = *stack;
+	if(!tmp)
+		ft_printf("NULL\n");
+	while (tmp != NULL)
+	{
+		ft_printf("nb: %d idx: %d pos: %d cost:%d\n", tmp->nb, tmp->idx, tmp->position , tmp->cost);
+		tmp = tmp->next;
+	}
+}
 
 void set_stack_pos(t_stack **stack)
 {
