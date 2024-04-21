@@ -44,5 +44,18 @@ t_stack *find_last_node(t_stack **stack)
 	return(tmp);
 }
 
+int len_stack(t_stack **stack)
+{
+	t_stack *tmp;
+	int i;
 
+	tmp = *stack;
+	i = 0;
+	while (tmp != NULL)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
+}
 

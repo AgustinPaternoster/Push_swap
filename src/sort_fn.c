@@ -68,29 +68,3 @@ void cost_calculation_a(t_stack **stack_a , t_stack **stack_b)
         node = node->next;
     }
 }
-
-void cost_calculation_b(t_stack **stack_a , t_stack **stack_b)
-{
-    t_stack *node;
-    t_stack *target;
-    int cost;
-
-    node = *stack_b;
-    while (node != NULL)
-    {
-        cost = 0;
-        target = find_closer_big(stack_a,node->idx);
-        if (target->above_median == node->above_median)
-        {
-            cost = count_mov(stack_a,node);
-            if (count_mov(stack_b,target) > cost)
-                cost = count_mov(stack_b,target);
-        }
-        else
-        {
-            cost = count_mov(stack_a,target) + count_mov(stack_b,node);
-        }
-        node->cost = cost;
-        node = node->next;
-    }
-}

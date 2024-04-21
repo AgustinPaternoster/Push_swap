@@ -1,14 +1,12 @@
 #include "../include/push_swap.h"
 
-
-
-void push(t_stack ** dst , t_stack ** src)
+void	push(t_stack **dst, t_stack **src)
 {
-	t_stack *node_to_move;
+	t_stack	*node_to_move;
 
 	node_to_move = *src;
 	*src = node_to_move->next;
-	if(*src != NULL)
+	if (*src != NULL)
 		(*src)->prev = NULL;
 	if (!*dst)
 	{
@@ -25,18 +23,18 @@ void push(t_stack ** dst , t_stack ** src)
 	set_stack_pos(dst);
 }
 
-void ft_pa(t_stack ** stack_a , t_stack ** stack_b)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	if(!*stack_a)
-		return;
-	push(stack_a,stack_b);
+	if (!*stack_a)
+		return ;
+	push(stack_a, stack_b);
 	ft_printf("pa\n");
 }
 
-void ft_pb(t_stack ** stack_a , t_stack ** stack_b)
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	if(!*stack_a)
-		return;
-	push(stack_b,stack_a);
+	if (!*stack_a)
+		return ;
+	push(stack_b, stack_a);
 	ft_printf("pb\n");
 }
