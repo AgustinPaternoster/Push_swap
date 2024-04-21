@@ -28,10 +28,6 @@ $(NAME) : $(SRC_FILES) $(HEADER) makefile
 	@make -C printf
 	$(CC) $(SRC_FILES) $(HEADER) $(PRINTF) $(CFLAGS) -o $(NAME)
 
-debug : $(SRC_FILES) $(HEADER) makefile
-	@make -C printf
-	$(CC) -g $(SRC_FILES) $(PRINTF) $(HEADER)
-
 clean :
 	make clean -C printf
 
@@ -41,13 +37,15 @@ fclean :
 
 re : fclean all
 
-test2:				$(NAME)	
+
+
+test10:				$(NAME)	
 					$(eval ARG = $(shell shuf -i 0-10 -n 10))
 					./push_swap $(ARG) | ./checker_linux $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
-test100:				$(NAME)	
+test100:			$(NAME)	
 					$(eval ARG = $(shell shuf -i 0-1000 -n 100))
 					./push_swap $(ARG) | ./checker_linux $(ARG)
 					@echo -n "Instructions: "

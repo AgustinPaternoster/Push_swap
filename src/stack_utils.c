@@ -1,101 +1,96 @@
 #include "../include/push_swap.h"
 
-
-void set_stack_pos(t_stack **stack)
+void	set_stack_pos(t_stack **stack)
 {
-	int i;
-	t_stack *tmp;
-	int len;
+	int		i;
+	t_stack	*tmp;
+	int		len;
 
 	len = len_stack(stack);
 	tmp = *stack;
 	i = 1;
-	while(tmp !=NULL)
+	while (tmp != NULL)
 	{
 		tmp->position = i;
-		if ((len / 2) >=  i)
+		if ((len / 2) >= i)
 			tmp->above_median = true;
 		else
 			tmp->above_median = false;
 		tmp = tmp->next;
 		i++;
 	}
-
 }
 
-t_stack *find_node_bypos(t_stack **stack, int pos)
+t_stack	*find_node_bypos(t_stack **stack, int pos)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack;
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
-		if(tmp->position == pos)
+		if (tmp->position == pos)
 			return (tmp);
 		tmp = tmp->next;
 	}
 	return (0);
 }
 
-
-t_stack *find_closer_big(t_stack **stack, int idx)
+t_stack	*find_closer_big(t_stack **stack, int idx)
 {
-	t_stack *tmp;
-	int idx_obj;
-	int idx_higest;
+	t_stack	*tmp;
+	int		idx_obj;
+	int		idx_higest;
 
 	tmp = *stack;
 	idx_obj = idx + 1;
 	idx_higest = (find_highest(stack))->idx;
-
 	while (idx_obj <= idx_higest)
 	{
-		while( tmp !=NULL)
+		while (tmp != NULL)
 		{
 			if (tmp->idx == idx_obj)
 				return (tmp);
-		tmp = tmp->next;
+			tmp = tmp->next;
 		}
 		tmp = *stack;
 		idx_obj++;
 	}
-	return(find_lowest(stack));
+	return (find_lowest(stack));
 }
 
-t_stack *find_closer_smll(t_stack **stack, int idx)
+t_stack	*find_closer_smll(t_stack **stack, int idx)
 {
-	t_stack *tmp;
-	int idx_obj;
+	t_stack	*tmp;
+	int		idx_obj;
 
 	tmp = *stack;
 	idx_obj = idx - 1;
 	while (idx_obj >= 1)
 	{
-		while( tmp !=NULL)
+		while (tmp != NULL)
 		{
 			if (tmp->idx == idx_obj)
 				return (tmp);
-		tmp = tmp->next;
+			tmp = tmp->next;
 		}
 		tmp = *stack;
 		idx_obj--;
 	}
-	return(find_highest(stack));
+	return (find_highest(stack));
 }
 
-
-bool check_sort(t_stack **stack)
+bool	check_sort(t_stack **stack)
 {
-	t_stack *node;
-	t_stack *tmp;
-	
+	t_stack	*node;
+	t_stack	*tmp;
+
 	node = *stack;
-	while(node != NULL)
+	while (node != NULL)
 	{
 		tmp = node->next;
-		while(tmp != NULL)
+		while (tmp != NULL)
 		{
-			if(node->idx > tmp->idx)
+			if (node->idx > tmp->idx)
 				return (false);
 			tmp = tmp->next;
 		}
