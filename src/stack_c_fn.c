@@ -27,7 +27,7 @@ int	find_idx(int nb, int *stack)
 	int	i;
 	
 	if (stack == NULL)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (stack[i] != nb)
 		i++;

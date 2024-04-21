@@ -7,7 +7,7 @@ void	set_stack_pos(t_stack **stack)
 	int		len;
 
 	if (stack == NULL)
-		return (NULL);
+		return ;
 	len = len_stack(stack);
 	tmp = *stack;
 	i = 1;
@@ -93,7 +93,7 @@ bool	check_sort(t_stack **stack)
 	t_stack	*tmp;
 
 	if (stack == NULL)
-		return (NULL);
+		return (0);
 	node = *stack;
 	while (node != NULL)
 	{

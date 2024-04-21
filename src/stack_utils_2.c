@@ -56,7 +56,7 @@ int	len_stack(t_stack **stack)
 	int		i;
 
 	if (stack == NULL)
-		return (NULL);
+		return (0);
 	tmp = *stack;
 	i = 0;
 	while (tmp != NULL)
