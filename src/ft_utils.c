@@ -6,6 +6,8 @@ long	ft_atol(char *str)
 	long	nb;
 	int		sign;
 
+	if (str == NULL)
+		return (0);
 	sign = 1;
 	nb = 0;
 	i = 0;

@@ -4,6 +4,8 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
+	if (stack_a == NULL || stack_b == NULL)
+		return ;
 	size = len_stack(stack_a);
 	if (check_sort(stack_a))
 		return ;

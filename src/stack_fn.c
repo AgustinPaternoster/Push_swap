@@ -18,6 +18,8 @@ void	add_stack(t_stack **stack, t_stack *node)
 	t_stack	*tmp;
 	t_stack	*lastnode;
 
+	if (stack == NULL)
+		return ;
 	tmp = *stack;
 	if (!tmp)
 		*stack = node;
@@ -34,6 +36,8 @@ void	free_stack(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*node;
 
+	if (stack == NULL)
+		return ;
 	node = *stack;
 	while (node != NULL)
 	{
@@ -50,6 +54,8 @@ int	set_idx(t_stack **stack_a)
 	int		*stack_c;
 	int		size;
 
+	if (stack_a == NULL)
+		return (0);
 	size = len_stack(stack_a);
 	tmp = *stack_a;
 	stack_c = ft_stack_c(stack_a, size);

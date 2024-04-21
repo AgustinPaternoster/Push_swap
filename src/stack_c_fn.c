@@ -5,7 +5,9 @@ int	*ft_stack_c(t_stack **stack_a, int size)
 	t_stack	*tmp;
 	int		*stack;
 	int		i;
-
+	
+	if (stack_a == NULL)
+		return (NULL);
 	stack = malloc (sizeof(int) * size);
 	if (!stack)
 		return (NULL);
@@ -23,7 +25,9 @@ int	*ft_stack_c(t_stack **stack_a, int size)
 int	find_idx(int nb, int *stack)
 {
 	int	i;
-
+	
+	if (stack == NULL)
+		return (NULL);
 	i = 0;
 	while (stack[i] != nb)
 		i++;

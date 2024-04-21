@@ -6,6 +6,8 @@ void	set_stack_pos(t_stack **stack)
 	t_stack	*tmp;
 	int		len;
 
+	if (stack == NULL)
+		return (NULL);
 	len = len_stack(stack);
 	tmp = *stack;
 	i = 1;
@@ -25,6 +27,8 @@ t_stack	*find_node_bypos(t_stack **stack, int pos)
 {
 	t_stack	*tmp;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	while (tmp != NULL)
 	{
@@ -41,6 +45,8 @@ t_stack	*find_closer_big(t_stack **stack, int idx)
 	int		idx_obj;
 	int		idx_higest;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	idx_obj = idx + 1;
 	idx_higest = (find_highest(stack))->idx;
@@ -63,6 +69,8 @@ t_stack	*find_closer_smll(t_stack **stack, int idx)
 	t_stack	*tmp;
 	int		idx_obj;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	idx_obj = idx - 1;
 	while (idx_obj >= 1)
@@ -84,6 +92,8 @@ bool	check_sort(t_stack **stack)
 	t_stack	*node;
 	t_stack	*tmp;
 
+	if (stack == NULL)
+		return (NULL);
 	node = *stack;
 	while (node != NULL)
 	{

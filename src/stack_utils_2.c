@@ -5,6 +5,8 @@ t_stack	*find_highest(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*higest;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	higest = *stack;
 	while (tmp->next != NULL)
@@ -21,6 +23,8 @@ t_stack	*find_lowest(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*lowest;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	lowest = *stack;
 	while (tmp->next != NULL)
@@ -36,6 +40,8 @@ t_stack	*find_last_node(t_stack **stack)
 {
 	t_stack	*tmp;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	if (!tmp)
 		return (NULL);
@@ -49,6 +55,8 @@ int	len_stack(t_stack **stack)
 	t_stack	*tmp;
 	int		i;
 
+	if (stack == NULL)
+		return (NULL);
 	tmp = *stack;
 	i = 0;
 	while (tmp != NULL)
