@@ -14,7 +14,8 @@ CFILES = check_err.c\
 		stack_c_fn.c\
 		stack_fn.c\
 		stack_utils.c\
-		stack_utils_2.c
+		stack_utils_2.c\
+		ft_split.c
 SRC_DIR = src/
 SRC_FILES = $(addprefix $(SRC_DIR),$(CFILES))
 

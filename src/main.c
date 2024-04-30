@@ -22,7 +22,7 @@ bool	init_stack(t_stack **stack_a, char **argv, int arg)
 	t_stack	*new_node;
 
 	i = 0;
-	while (i < arg)
+	while (i < arg || (argv[i] && arg == 1))
 	{
 		if (!check_int(argv[i]))
 			return (free_stack(stack_a), false);
@@ -52,8 +52,15 @@ int	main(int arg, char **argv)
 	stack_b = NULL;
 	if (arg == 1)
 		return (ft_printf("Error\n"), 0);
-	if (!init_stack(&stack_a, argv + 1, arg - 1))
-		return (ft_printf("Error\n"), free(stack_a), 0);
+	if (arg == 2)
+		{
+			argv = ft_split(argv[1]);
+			if(!init_stack(&stack_a, argv , arg - 1))
+				return (ft_printf("Error\n"), free(stack_a), 0);
+		}
+	else 
+		if (!init_stack(&stack_a, argv + 1, arg - 1))
+			return (ft_printf("Error\n"), free(stack_a), 0);
 	sort_stack(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	return (0);

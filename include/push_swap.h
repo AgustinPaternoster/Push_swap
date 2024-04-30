@@ -23,6 +23,7 @@ int ft_isdigit(char c);
 int ft_strlen(char *str);
 int ft_isspace(char c);
 int find_idx(int nb,int *stack);
+char    **ft_split(char *str);
 
 //ft_stack
 t_stack *create_node(int nb);
