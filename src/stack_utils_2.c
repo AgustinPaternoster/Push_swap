@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/push_swap.h"
 
 t_stack	*find_highest(t_stack **stack)

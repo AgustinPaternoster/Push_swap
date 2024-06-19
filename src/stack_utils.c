@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/push_swap.h"
 
 void	set_stack_pos(t_stack **stack)

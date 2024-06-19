@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/push_swap.h"
 
 int	*ft_stack_c(t_stack **stack_a, int size)
@@ -18,7 +17,7 @@ int	*ft_stack_c(t_stack **stack_a, int size)
 	t_stack	*tmp;
 	int		*stack;
 	int		i;
-	
+
 	if (stack_a == NULL)
 		return (NULL);
 	stack = malloc (sizeof(int) * size);
@@ -38,7 +37,7 @@ int	*ft_stack_c(t_stack **stack_a, int size)
 int	find_idx(int nb, int *stack)
 {
 	int	i;
-	
+
 	if (stack == NULL)
 		return (0);
 	i = 0;

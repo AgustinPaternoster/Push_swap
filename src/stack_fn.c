@@ -79,5 +79,6 @@ int	set_idx(t_stack **stack_a)
 		tmp->idx = find_idx(tmp->nb, stack_c);
 		tmp = tmp->next;
 	}
+	free(stack_c);
 	return (1);
 }
