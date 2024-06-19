@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apaterno <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/19 11:13:49 by apaterno          #+#    #+#             */
+/*   Updated: 2024/06/19 11:14:35 by apaterno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef PUSH_SWAP
 #define PUSH_SWAP
 #include <unistd.h>
@@ -8,10 +21,10 @@
 
 typedef struct l_stack 
 {
-    int idx;
-    int nb;
+	int idx;
+	int nb;
 	int position;
-    int cost;
+	int cost;
     bool above_median;
     struct l_stack *prev;
     struct l_stack *next;
