@@ -78,3 +78,10 @@ int	main(int arg, char **argv)
 	free_stack(&stack_a);
 	return (0);
 }
+
+// Muy buen proyecto, una pena que haya encontrado estos errores 
+// tontos y ya sabes como solucionarlo y si necesitas ayuda aca me t
+// ienes, a por todas y te dejo tanto el sanitize como los errores 
+// encontrados . Un saludo :))) -fsanitize=leak Errores: - Norminette - 
+// Leaks cuando pones solo un char/int - dar error cuando pasan "" - 
+// Solucionar relink en printf (carpeta)
