@@ -12,6 +12,19 @@
 
 #include "../include/push_swap.h"
 
+void cstk(char **stack)
+{
+	int i;
+
+	i = 0;
+	while (stack[i] != NULL)
+	{
+		free(stack[i]);
+		i++;
+	}
+	free(stack);
+}
+
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -68,12 +81,16 @@ int	main(int arg, char **argv)
 	{
 		argv = ft_split(argv[1]);
 		if (!init_stack(&stack_a, argv, arg - 1))
+		{	
+			cstk(argv);	
 			return (ft_putstr_fd("Error\n", 2), free(stack_a), 0);
+		}
 	}
 	else
 		if (!init_stack(&stack_a, argv + 1, arg - 1))
 			return (ft_putstr_fd("Error\n", 2), free(stack_a), 0);
 	sort_stack(&stack_a, &stack_b);
+	cstk(argv);
 	free_stack(&stack_b);
 	free_stack(&stack_a);
 	return (0);
