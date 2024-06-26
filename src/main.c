@@ -65,6 +65,7 @@ bool	init_stack(t_stack **stack_a, char **argv, int arg)
 	if (!set_idx(stack_a))
 		return (free_stack(stack_a), false);
 	set_stack_pos(stack_a);
+	
 	return (true);
 }
 
@@ -81,16 +82,13 @@ int	main(int arg, char **argv)
 	{
 		argv = ft_split(argv[1]);
 		if (!init_stack(&stack_a, argv, arg - 1))
-		{	
-			cstk(argv);	
-			return (ft_putstr_fd("Error\n", 2), free(stack_a), 0);
-		}
+			return (ft_putstr_fd("Error\n", 2), free(stack_a),cstk(argv), 0);
+		cstk(argv);
 	}
 	else
 		if (!init_stack(&stack_a, argv + 1, arg - 1))
 			return (ft_putstr_fd("Error\n", 2), free(stack_a), 0);
 	sort_stack(&stack_a, &stack_b);
-	cstk(argv);
 	free_stack(&stack_b);
 	free_stack(&stack_a);
 	return (0);
